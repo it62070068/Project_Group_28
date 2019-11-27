@@ -1,54 +1,74 @@
 '''pair location searcher'''
-def find_pair():
+
+dic_location = {i+j:'default' for i in 'ABCDEFGH' for j in '123456789'}
+
+def main(user_choice):
     '''main function for finding pair location'''
-    dic_location = {i+j:'default' for i in 'ABCDEFGH' for j in '123456789'}
-    while True:
-        val = input('if you want to find pair says "F" but if you want to tell your positon says "T" : ')
-        if val == 'F':
-            pair_id = search_position(dic_location)
-            if pair_id != False:
-                print(search_dict(dic_location, pair_id))
-            else:
-                print('Not Found')
-        elif val == 'T':
-            your_id, your_positon = tell_position(dic_location)
-            if your_id in dic_location.values():
-                dic_location[search_dict(dic_location, your_id)] = 'default'
-            dic_location[your_positon] = your_id
-            print('save your position complete')
-        else:
-            print('ERROR please try again only "F" or "T"')
-
-def search_position(dic):
-    '''search positon that is pair_id in dic ?''' 
-    pair_id = input('your pair_ID : ')
-    if pair_id in dic.values():
-        return pair_id
+    print('--------------------------------------')
+    if user_choice == 'Find':
+        find_pair(input('your pair_ID : '))
+        print('--------------------------------------')
+    elif user_choice == 'Tell':
+        upload_your_location()
+        print('save your position complete')
+        print('--------------------------------------')
     else:
-        return False
+        print('ERROR please try again only "F" or "T"')
+        print('--------------------------------------')
+    main(input('if you want to find pair says "Find" but if you want to tell your positon says "Tell" : '))
 
-def tell_position(dic):
-    '''tell your id'''
-    your_id = input('Your ID : ')
+def find_pair(pair_id):
+    if check_id_in_dic(pair_id) == True:
+        pair_location = search_from_dic(pair_id)
+        print(pair_location)
+    else:
+        print('Not Found')
+
+def check_id_in_dic(stu_id, dic=dic_location):
+    if stu_id in dic.values():
+        return True
+    return False
+
+def search_from_dic(pair_id, dic=dic_location):
+    for location, stu_id in dic.items():
+        if stu_id == pair_id:
+            return location
+
+def upload_your_location(dic=dic_location):
+    your_id = filter_id(input('Your ID : '))
+    print('--------------------------------------')
+    your_positon = filter_location(input('Your Positon from A1 - A9, B1 - B9, .... H1 - H9 : '))
+    print('--------------------------------------')
+    if check_id_in_dic(your_id) == True:
+        your_pre_location = search_from_dic(your_id)
+        dic[your_pre_location] = 'default'
+    dic[your_positon] = your_id
+
+def filter_id(your_id):
     if len(your_id) == 8 and your_id.isnumeric():
-        return your_id, check_position(dic)
-    else:
-        print('ERROR please tell your ID again Ex 62070068 : ')
-        return tell_position(dic)
+        return your_id
+    print('ERROR please tell your ID again Ex 62070068 : ')
+    print('--------------------------------------')
+    return filter_id(input('Your ID : '))
 
-def check_position(dic):
-    '''check your position that conditional'''
-    your_positon = input('Your Positon from A1 - A9, B1 - B9, .... H1 - H9 : ')
-    if your_positon in dic:
-        return your_positon
+def filter_location(your_position, dic=dic_location):
+    if your_position in dic:
+        return your_position
     print('ERROR please tell your positon again')
-    return check_position
+    print('--------------------------------------')
+    return filter_location(input('Your Positon from A1 - A9, B1 - B9, .... H1 - H9 : '))
 
-def search_dict(dic, pair_id):
-    '''search key in dic that value = pair_id'''
-    for key, value in dic.items():
-        if value == pair_id:
-            return key
+def test():
+    dic_test = {'A1':'62070068', 'A2':'default', 'A3':'62070038'}
+    assert check_id_in_dic('62070068', dic_test) == True
+    assert check_id_in_dic('62070190', dic_test) == False
+    assert search_from_dic('62070068', dic_test) == 'A1'
+    assert search_from_dic('62070038', dic_test) == 'A3'
+    assert filter_id('62070068') == '62070068'
+    assert filter_id('62070038') == '62070038'
+    assert filter_location('A1', dic_test) == 'A1'
+    assert filter_location('A2', dic_test) == 'A2'
 
-find_pair()
+test()
+main(input('if you want to find pair says "Find" but if you want to tell your positon says "Tell" : '))
 
