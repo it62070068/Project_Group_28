@@ -7,6 +7,7 @@ def main(user_choice):
     print('--------------------------------------')
     if user_choice == 'Find':
         choose_choices(input('if you want to find only your pair says "Pair" if you want to see all location says "All" : '))
+        #find only your Pair _OR_ See all location
         print('--------------------------------------')
     elif user_choice == 'Tell':
         upload_location()
