@@ -3,7 +3,7 @@
 dic_location = {j+i:'default' for i in '123456789' for j in 'ABCDEFGH'}
 
 def main(user_choice):
-    '''main function for finding pair location or submit your location'''
+    '''main function for Finding pair location Or Upload your location'''
     print('--------------------------------------')
     if user_choice == 'Find':
         choose_choices(input('if you want to find only your pair says "Pair" if you want to see all location says "All" : '))
