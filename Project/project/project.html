@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Psit location</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie-edge">
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+</head>
+<body style="background-image:url(galaxtus.jpg); background-size: cover; height: 100%;">
+<div class="container">
+    <div class='row'>
+        <div class="col-lg-6" align="center">
+            <br>
+            <form id="CommentForm">
+                <p>Student ID:</p>
+                <input type="text" id="idName" placeholder="Enter ID"> <br>
+                <p>Location:</p>
+                <input type="text" id="idLocation" placeholder="Enter location"><br>
+                <br>
+                <input type="submit" id="commentBtn">
+            </form>
+            <br>
+            <img src="teacher_table.png" width="20%"height="15%">
+            <table border="2" align="center" width="80%"height="50%" bgcolor="pink">
+                <tr align="center">
+                    <th></th><th>A</th><th>B</th><th>C</th><th>D</th>
+                             <th>E</th><th>F</th><th>G</th><th>H</th>
+                </tr>
+                <tr align="center">
+                    <th>1</th><td>A1</td><td>B1</td><td>C1</td><td>D1</td>
+                    <td>E1</td><td>F1</td><td>G1</td><td>H1</td>
+                </tr>
+                <tr align="center">
+                    <th>2</th><td>A2</td><td>B2</td><td>C2</td><td>D2</td>
+                    <td>E2</td><td>F2</td><td>G2</td><td>H2</td>
+                </tr>
+                <tr align="center">
+                    <th>3</th><td>A3</td><td>B3</td><td>C3</td><td>D3</td>
+                    <td>E3</td><td>F3</td><td>G3</td><td>H3</td>
+                </tr>
+                <tr align="center">
+                    <th>4</th><td>A4</td><td>B4</td><td>C4</td><td>D4</td>
+                    <td>E4</td><td>F4</td><td>G4</td><td>H4</td>
+                </tr>
+                <tr align="center">
+                    <th>5</th><td>A5</td><td>B5</td><td>C5</td><td>D5</td>
+                    <td>E5</td><td>F5</td><td>G5</td><td>H5</td>
+                </tr>
+                <tr align="center">
+                    <th>6</th><td>A6</td><td>B6</td><td>C6</td><td>D6</td>
+                    <td>E6</td><td>F6</td><td>G6</td><td>H6</td>
+                </tr>
+                <tr align="center">
+                    <th>7</th><td>A7</td><td>B7</td><td>C7</td><td>D7</td>
+                    <td>E7</td><td>F7</td><td>G7</td><td>H7</td>
+                </tr>
+                <tr align="center">
+                    <th>8</th><td>A8</td><td>B8</td><td>C8</td><td>D8</td>
+                    <td>E8</td><td>F8</td><td>G8</td><td>H8</td>
+                </tr>
+                <tr align="center">
+                    <th>9</th><td>A9</td><td>B9</td><td>C9</td><td>D9</td>
+                    <td>E9</td><td>F9</td><td>G9</td><td>H9</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-6" align="center">
+            <br>
+            <table border="1px" align="center" width="50%"height="20%" bgcolor="white"> 
+                <thead> 
+                    <tr align="center"> 
+                        <th>Student ID</th> 
+                        <th>Location</th> 
+                    </tr> 
+                </thead> 
+                <tbody id="dataRow"> 
+                </tbody>
+            </table> 
+        </div>
+
+    </div>
+</div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBPzoXJ28SwEOSqY7GmDwN50taJX7G--zA",
+    authDomain: "misterdonut-e1f1e.firebaseapp.com",
+    databaseURL: "https://misterdonut-e1f1e.firebaseio.com",
+    projectId: "misterdonut-e1f1e",
+    storageBucket: "misterdonut-e1f1e.appspot.com",
+    messagingSenderId: "979051724191",
+    appId: "1:979051724191:web:e942e80ccbf41f124b11aa",
+    measurementId: "G-WS0J2RN8ZX"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+let myFirebase = firebase.database();
+let dataRef = myFirebase.ref('/guestbook');
+
+document.getElementById("commentBtn").onclick = function() {
+
+    let lname = document.getElementById('idName').value;
+    let llocation = document.getElementById('idLocation').value;
+    let ltime = Date.now();
+
+    dataRef.push({
+        name: lname,
+        location: llocation,
+        time: ltime
+    });
+
+};
+
+
+dataRef.limitToLast(250).on('child_added', function(childSnapshot) {
+
+    let item = childSnapshot.val()
+    document.getElementById('dataRow').innerHTML += "<tr><td>" + item.name + "</td><td>" + item.location
+
+});
+
+</script>
+</body>
+</html>
