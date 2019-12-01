@@ -3,7 +3,7 @@
 dic_location = {j+i:'default' for i in '123456789' for j in 'ABCDEFGH'}
 
 def main(user_choice):
-    '''main function for Finding pair location Or Upload your location'''
+    '''main function for finding pair location or submit your location'''
     print('--------------------------------------')
     if user_choice == 'Find':
         choose_choices(input('if you want to find only your pair says "Pair" if you want to see all location says "All" : '))
@@ -68,9 +68,9 @@ def upload_location(dic=dic_location):
         dic[your_pre_location] = 'default'
     dic[your_location] = your_id
 
-def filter_id(stu_id, words=''):
+def filter_id(stu_id, words='', num_char=8):
     '''filter stu_id that is not number and number of characters is not 8'''  
-    if len(stu_id) == 8 and stu_id.isnumeric():
+    if len(stu_id) == num_char and stu_id.isnumeric():
         return stu_id
     print('ERROR please tell your {0}_ID again Ex 62070068 : '.format(words))
     print('--------------------------------------')
@@ -84,17 +84,19 @@ def filter_location(your_position, dic=dic_location):
     print('--------------------------------------')
     return filter_location(input('Your location from A1 - A9, B1 - B9, .... H1 - H9 : '))
 
-def show_all_location():
+def show_all_location(row=9, col=8):
     '''show all location'''
+    last_row_left = (row-1)*col
     print()
-    all_row_left = range(0, 65, 8)
+    all_row_left = range(0, last_row_left + 1, col)
     for row_left in all_row_left:
         show_row(row_left)
         print('\n')
 
-def show_row(row_left):
+def show_row(row_left, col=8):
     '''show 1 row'''
-    row_right = row_left + 7
+    last_row_right = col - 1
+    row_right = row_left + last_row_right
     row = list(dic_location.items())[row_left:row_right+1]
     for location, stu_id in row:
         if stu_id == 'default':
