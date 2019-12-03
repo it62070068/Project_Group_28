@@ -121,6 +121,6 @@ def test():
     assert filter_id('62070038') == '62070038'
     assert filter_location('A1', dic_test) == 'A1'
     assert filter_location('A2', dic_test) == 'A2'
-    
+
 test()
 main(input('if you want to find pair says "Find" but if you want to tell your location says "Tell" or "Clear" to clear all data : '))
