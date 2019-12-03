@@ -52,7 +52,7 @@ def check_id_in_dic(stu_id, dic=dic_location):
     return False
 
 def search_from_dic(pair_id, dic=dic_location):
-    '''search location in dic that student ID = pair ID'''
+    '''search location in dic_location that student ID = pair ID'''
     for location, stu_id in dic.items():
         if stu_id == pair_id:
             return location
@@ -77,7 +77,7 @@ def filter_id(stu_id, words='', num_char=8):
     return filter_id(input('Your {0}_ID : '.format(words)), words)
 
 def filter_location(your_position, dic=dic_location):
-    '''filter your location that is not in dic_location'''
+    '''filter your location that not in dic_location'''
     if your_position in dic:
         return your_position
     print('ERROR please tell your location again')
@@ -104,11 +104,11 @@ def show_row(row_left, col=8):
         else:
             print(stu_id, end='      ')
 
-def clear_data():
-    '''clear all data in dic_location'''
-    for location in dic_location:
-        if dic_location[location] != 'default':
-            dic_location[location] = 'default'
+def clear_data(dic=dic_location):
+    '''clear all data in dic'''
+    for key in dic:
+        if dic[key] != 'default':
+            dic[key] = 'default'
 
 def test():
     '''tester'''
@@ -121,6 +121,6 @@ def test():
     assert filter_id('62070038') == '62070038'
     assert filter_location('A1', dic_test) == 'A1'
     assert filter_location('A2', dic_test) == 'A2'
-
+    
 test()
 main(input('if you want to find pair says "Find" but if you want to tell your location says "Tell" or "Clear" to clear all data : '))
