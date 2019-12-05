@@ -2,10 +2,12 @@
 <html>
 <head>
     <title>All Psit location</title>
+    <!-- Page boostrap begins here -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <!-- Page boostrap ends here -->
 </head>
 <body style="background-image:url(galaxtus.jpg); background-size: cover; height: 100%;">
 <!-- Page content begins here -->
@@ -13,6 +15,7 @@
     <div class='row'>
         <div class="col-lg-6" align="center">
             <br>
+            <!-- Page upload user data begins here -->
             <form id="CommentForm">
                 <p>Student ID:</p>
                 <input type="text" id="idName" placeholder="Enter ID"> <br>
@@ -20,9 +23,14 @@
                 <input type="text" id="idLocation" placeholder="Enter location"><br>
                 <br>
                 <input type="submit" id="commentBtn">
-            </form>
+            </form> <!-- Page upload user data ends here -->
             <br>
-            <img src="teacher_table.png" width="20%"height="15%">
+            
+            <!-- image teacher table begins here -->
+            <img src="teacher_table.png" width="20%"height="15%"> 
+            <!-- Image teacher table endss here -->
+
+            <!-- Page location table begins here -->
             <table border="2" align="center" width="80%"height="50%" bgcolor="pink">
                 <tr align="center">
                     <th></th><th>A</th><th>B</th><th>C</th><th>D</th>
@@ -64,8 +72,10 @@
                     <th>9</th><td>A9</td><td>B9</td><td>C9</td><td>D9</td>
                               <td>E9</td><td>F9</td><td>G9</td><td>H9</td>
                 </tr>
-            </table>
+            </table> <!-- Page location table ends here -->
         </div> <!-- Close Col 1 -->
+        
+        <!-- Page show all upload location begins here -->
         <div class="col-lg-6" align="center">
             <br>
             <table border="1px" align="center" width="50%"height="20%" bgcolor="white"> 
@@ -77,8 +87,9 @@
                 </thead> 
                 <tbody id="dataRow"> 
                 </tbody>
-            </table> 
+            </table> <!-- Page show all upload location ends here -->
         </div> <!-- Close Col 2 -->
+    
     </div> <!-- Close Row -->
 </div> <!-- Close container -->
 <!-- Page content ends here -->
@@ -106,6 +117,7 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 
+<!-- push data to firebase begins here -->
 let myFirebase = firebase.database();
 let dataRef = myFirebase.ref('/guestbook');
 
@@ -121,15 +133,15 @@ document.getElementById("commentBtn").onclick = function() {
         time: ltime
     });
 
-};
+}; <!-- push data to firebase ends here -->
 
-
+<!-- pull data from firebase begins here -->
 dataRef.limitToLast(250).on('child_added', function(childSnapshot) {
 
     let item = childSnapshot.val()
     document.getElementById('dataRow').innerHTML += "<tr><td>" + item.name + "</td><td>" + item.location
 
-});
+}); <!-- pull data from firebase begins here -->
 
 </script>
 </body>
