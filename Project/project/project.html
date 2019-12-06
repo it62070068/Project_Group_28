@@ -21,6 +21,8 @@
                 <input type="text" id="idName" placeholder="Enter ID"> <br>
                 <p>Location:</p>
                 <input type="text" id="idLocation" placeholder="Enter location"><br>
+				<p>Contact:</p>
+                <input type="text" id="idContact" placeholder="Enter phone number"><br>
                 <br>
                 <input type="submit" id="commentBtn">
             </form> <!-- Page upload user data ends here -->
@@ -83,6 +85,8 @@
                     <tr align="center"> 
                         <th>Student ID</th> 
                         <th>Location</th> 
+						<th>Contact</th> 
+						<th>Time</th> 
                     </tr> 
                 </thead> 
                 <tbody id="dataRow"> 
@@ -99,19 +103,19 @@
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.1/firebase-analytics.js"></script>
 
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyBPzoXJ28SwEOSqY7GmDwN50taJX7G--zA",
-    authDomain: "misterdonut-e1f1e.firebaseapp.com",
-    databaseURL: "https://misterdonut-e1f1e.firebaseio.com",
-    projectId: "misterdonut-e1f1e",
-    storageBucket: "misterdonut-e1f1e.appspot.com",
-    messagingSenderId: "979051724191",
-    appId: "1:979051724191:web:e942e80ccbf41f124b11aa",
-    measurementId: "G-WS0J2RN8ZX"
+    apiKey: "AIzaSyCCvDVu7H1ygq4dTC379slHtzUDHy0uETw",
+    authDomain: "whocomepair.firebaseapp.com",
+    databaseURL: "https://whocomepair.firebaseio.com",
+    projectId: "whocomepair",
+    storageBucket: "whocomepair.appspot.com",
+    messagingSenderId: "67909590691",
+    appId: "1:67909590691:web:84cb556fea1c2bd454e916",
+    measurementId: "G-W8PY6ZPSEC"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -123,13 +127,15 @@ let dataRef = myFirebase.ref('/guestbook');
 
 document.getElementById("commentBtn").onclick = function() {
 
-    let lname = document.getElementById('idName').value;
+    let lstudentid = document.getElementById('idName').value;
     let llocation = document.getElementById('idLocation').value;
+	let lcontact = document.getElementById('idContact').value; 
     let ltime = Date.now();
 
     dataRef.push({
-        name: lname,
+        studentid: lstudentid,
         location: llocation,
+		contact: lcontact,
         time: ltime
     });
 
@@ -139,7 +145,8 @@ document.getElementById("commentBtn").onclick = function() {
 dataRef.limitToLast(250).on('child_added', function(childSnapshot) {
 
     let item = childSnapshot.val()
-    document.getElementById('dataRow').innerHTML += "<tr><td>" + item.name + "</td><td>" + item.location
+    document.getElementById('dataRow').innerHTML += "<tr><td>" + item.studentid + "</td><td>" + item.location + "</td><td>"
+	+ item.contact + "</td><td>" + item.time + "</td></tr>"
 
 }); <!-- pull data from firebase begins here -->
 
