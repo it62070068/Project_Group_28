@@ -130,7 +130,10 @@ document.getElementById("commentBtn").onclick = function() {
     let lstudentid = document.getElementById('idName').value;
     let llocation = document.getElementById('idLocation').value;
 	let lcontact = document.getElementById('idContact').value; 
-    let ltime = Date.now();
+    var d = new Date(),
+    h = (d.getHours()<10?'0':'') + d.getHours(),
+    m = (d.getMinutes()<10?'0':'') + d.getMinutes();
+	ltime = h + ':' + m;
 
     dataRef.push({
         studentid: lstudentid,
