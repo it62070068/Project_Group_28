@@ -1,6 +1,7 @@
 '''pair location searcher'''
 
 dic_location = {j+i:'default' for i in '123456789' for j in 'ABCDEFGH'}
+#key is location and value is student ID set default to default
 
 def main(user_choice):
     '''main function for Finding pair location or upload your location'''
