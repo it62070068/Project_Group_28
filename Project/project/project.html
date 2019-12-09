@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Our Project Psit location</title>
+    <title>All Psit location</title>
     <!-- Page boostrap begins here -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,31 +9,46 @@
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <!-- Page boostrap ends here -->
 </head>
-<body style="background-image:url(https://cdn.wallpapersafari.com/47/49/usL7yD.jpg); background-size: cover; height: 100%;">
+<body style="background-image:url(bg.jpg); background-size: cover; height: 100%;">
 <!-- Page content begins here -->
 <div class="container">
-    <div class='row'>
-        <div class="col-lg-6" align="center">
+	<center><h1>Who come pair</h1></center>
+    <div class='row'> <!-- Row 1 -->
+        <div class="col-lg-6" align="center"><br>
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+				<!-- Page upload user data begins here -->
+				<form id="CommentForm">
+					<div class="form-group">
+					<label>Student ID</label>
+					<input type="text" id="idName" placeholder="Enter ID" class="form-control">
+					</div>
+					<div class="form-group">
+					<label>Seat</label>
+					<input type="text" id="idLocation" placeholder="Enter seat number" class="form-control" class="form-control">
+					</div>
+					<div class="form-group">
+					<label>Phone number</label>
+					<input type="text" id="idContact" placeholder="Enter phone number" class="form-control" class="form-control">
+					</div>
+					<br>
+					<input type="submit" id="commentBtn" class="btn btn-primary">
+				</form> <!-- Page upload user data ends here -->
+				</div>
+			</div>
             <br>
-            <!-- Page upload user data begins here -->
-            <form id="CommentForm">
-                <p>Student ID:</p>
-                <input type="text" id="idName" placeholder="Enter ID"> <br>
-                <p>Location:</p>
-                <input type="text" id="idLocation" placeholder="Enter location"><br>
-				<p>Contact:</p>
-                <input type="text" id="idContact" placeholder="Enter phone number"><br>
-                <br>
-                <input type="submit" id="commentBtn">
-            </form> <!-- Page upload user data ends here -->
-            <br>
-            
-            <!-- image teacher table begins here -->
-            <img src="teacher_table.png" width="20%"height="15%"> 
+        </div> <!-- Close Col 1 -->
+
+		<div class="col-lg-6">
+			<br>
+			<div class="card"">
+			<center><h3>แผนผังห้อง</h4></center>
+			<!-- image teacher table begins here -->
+            <center><img src="teacher_table.png" width="15%"height="10%"></center>
             <!-- Image teacher table endss here -->
 
-            <!-- Page location table begins here -->
-            <table border="2" align="center" width="80%"height="50%" bgcolor="pink">
+			 <!-- Page location table begins here -->
+            <table border="1" align="center" width="80%"height="50%" bgcolor="pink">
                 <tr align="center">
                     <th></th><th>A</th><th>B</th><th>C</th><th>D</th>
                              <th>E</th><th>F</th><th>G</th><th>H</th>
@@ -75,26 +90,35 @@
                               <td>E9</td><td>F9</td><td>G9</td><td>H9</td>
                 </tr>
             </table> <!-- Page location table ends here -->
-        </div> <!-- Close Col 1 -->
-        
-        <!-- Page show all upload location begins here -->
-        <div class="col-lg-6" align="center">
-            <br>
-            <table border="1px" align="center" width="50%"height="20%" bgcolor="white"> 
-                <thead> 
-                    <tr align="center"> 
-                        <th>Student ID</th> 
-                        <th>Location</th> 
-						<th>Contact</th> 
-						<th>Time</th> 
-                    </tr> 
-                </thead> 
-                <tbody id="dataRow"> 
-                </tbody>
-            </table> <!-- Page show all upload location ends here -->
-        </div> <!-- Close Col 2 -->
-    
-    </div> <!-- Close Row -->
+			<br>
+			</div>
+		</div> <!-- Close Col 2-->
+	</div><br><br> <!-- Close Row 1-->
+
+	<div class="row"> <!-- Row 2 -->
+		<!-- Page show all upload location begins here -->
+		<div class="col-lg">
+			<div class="card">
+			<br>
+			<center><h4>รายชื่อคนที่มา</h4></center>
+			<div class="table-responsive-lg">
+				<table class="table" border="2"> 
+					<thead class="thead-light"> 
+						<tr align="center"> 
+							<th>Student ID</th> 
+							<th>Seat</th> 
+							<th>Contact</th> 
+							<th>Time</th> 
+						</tr> 
+					</thead> 
+					<tbody id="dataRow" class="table-light"> 
+					</tbody>
+				</table> <!-- Page show all upload location ends here -->
+			</div>
+			</div>
+			</div>
+		</div> <!-- Close Col 2 -->
+	</div> <!-- Close Row 2-->
 </div> <!-- Close container -->
 <!-- Page content ends here -->
 
