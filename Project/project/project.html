@@ -34,6 +34,10 @@
 							<input type="text" id="idLocation" placeholder="Enter seat number" class="form-control" class="form-control">
 							</div>
 							<div class="form-group">
+							<label>E-mail</label>
+							<input type="text" id="idEmail" placeholder="Enter your e-mail address" class="form-control" class="form-control">
+							</div>
+							<div class="form-group">
 							<label>Phone number</label>
 							<input type="text" id="idContact" placeholder="Enter phone number" class="form-control" class="form-control">
 							</div>
@@ -112,8 +116,9 @@
 							<thead class="thead-light"> 
 								<tr align="center"> 
 									<th>Student ID</th> 
-									<th>Seat</th> 
-									<th>Contact</th> 
+									<th>Seat</th>
+									<th>E-mail</th>
+									<th>Contact</th>
 									<th>Time</th> 
 								</tr> 
 							</thead> 
@@ -159,6 +164,7 @@
 
 			let lstudentid = document.getElementById('idName').value;
 			let llocation = document.getElementById('idLocation').value;
+			let lemail = document.getElementById('idEmail').value; 
 			let lcontact = document.getElementById('idContact').value; 
 			var d = new Date(),
 			h = (d.getHours()<10?'0':'') + d.getHours(),
@@ -168,6 +174,7 @@
 			dataRef.push({
 				studentid: lstudentid,
 				location: llocation,
+				email: lemail,
 				contact: lcontact,
 				time: ltime
 			});
@@ -179,7 +186,7 @@
 
 			let item = childSnapshot.val()
 			document.getElementById('dataRow').innerHTML += "<tr><td>" + item.studentid + "</td><td>" + item.location + "</td><td>"
-			+ item.contact + "</td><td>" + item.time + "</td></tr>"
+			+ item.email + "</td><td>"+ item.contact + "</td><td>" + item.time + "</td></tr>"
 
 		}); <!-- pull data from firebase begins here -->
 
