@@ -1,182 +1,188 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>All Psit location</title>
-    <!-- Page boostrap begins here -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <!-- Page boostrap ends here -->
-</head>
-<body style="background-image:url(bg.jpg); background-size: cover; height: 100%;">
-<!-- Page content begins here -->
-<div class="container">
-	<center><h1>Who come pair</h1></center>
-    <div class='row'> <!-- Row 1 -->
-        <div class="col-lg-6" align="center"><br>
-			<div class="card" style="width: 18rem;">
-				<div class="card-body">
-				<!-- Page upload user data begins here -->
-				<form id="CommentForm">
-					<div class="form-group">
-					<label>Student ID</label>
-					<input type="text" id="idName" placeholder="Enter ID" class="form-control">
-					</div>
-					<div class="form-group">
-					<label>Seat</label>
-					<input type="text" id="idLocation" placeholder="Enter seat number" class="form-control" class="form-control">
-					</div>
-					<div class="form-group">
-					<label>Phone number</label>
-					<input type="text" id="idContact" placeholder="Enter phone number" class="form-control" class="form-control">
+	<head>
+		<title>All Psit location</title>
+		<!-- Page boostrap begins here -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie-edge">
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<!-- Page boostrap ends here -->
+	</head>
+	<body style="background-image:url(bg.jpg); background-size: cover; height: 100%;">
+		<!-- Page content begins here -->
+		<div class="container">
+
+			<center><h1>Find My Pair Programing</h1></center>
+			
+			<center><a target="_blank" href="https://docs.google.com/spreadsheets/d/1GQxVlxA0lq8o0PHgPwY3BAi7EfiMcDOENuHu3DdSFuA/edit#gid=0"
+			class="btn btn-warning" role="button">รายชื่อคู่Pairประจำสัปดาห์</a></center>
+			
+			<div class='row'> <!-- Row 1 -->
+				<div class="col-lg-6" align="center"><br><!-- Col 1 -->
+					<!-- Part upload user data begins here -->
+					<div class="card" style="width: 18rem;">
+						<div class="card-body">
+						<form id="CommentForm">
+							<h4>ลงชื่อ</h4>
+							<div class="form-group">
+							<label>Student ID</label>
+							<input type="text" id="idName" placeholder="Enter ID" class="form-control">
+							</div>
+							<div class="form-group">
+							<label>Seat</label>
+							<input type="text" id="idLocation" placeholder="Enter seat number" class="form-control" class="form-control">
+							</div>
+							<div class="form-group">
+							<label>Phone number</label>
+							<input type="text" id="idContact" placeholder="Enter phone number" class="form-control" class="form-control">
+							</div>
+							<br>
+							<input type="submit" id="commentBtn" class="btn btn-primary">
+						</form>
+						</div>
 					</div>
 					<br>
-					<input type="submit" id="commentBtn" class="btn btn-primary">
-				</form> <!-- Page upload user data ends here -->
-				</div>
-			</div>
-            <br>
-        </div> <!-- Close Col 1 -->
+					<!-- Page upload user data ends here -->
+				</div> <!-- Close Col 1 -->
 
-		<div class="col-lg-6">
-			<br>
-			<div class="card"">
-			<center><h3>แผนผังห้อง</h4></center>
-			<!-- image teacher table begins here -->
-            <center><img src="teacher_table.png" width="15%"height="10%"></center>
-            <!-- Image teacher table endss here -->
 
-			 <!-- Page location table begins here -->
-            <table border="1" align="center" width="80%"height="50%" bgcolor="pink">
-                <tr align="center">
-                    <th></th><th>A</th><th>B</th><th>C</th><th>D</th>
-                             <th>E</th><th>F</th><th>G</th><th>H</th>
-                </tr>
-                <tr align="center">
-                    <th>1</th><td>A1</td><td>B1</td><td>C1</td><td>D1</td>
-                              <td>E1</td><td>F1</td><td>G1</td><td>H1</td>
-                </tr>
-                <tr align="center">
-                    <th>2</th><td>A2</td><td>B2</td><td>C2</td><td>D2</td>
-                              <td>E2</td><td>F2</td><td>G2</td><td>H2</td>
-                </tr>
-                <tr align="center">
-                    <th>3</th><td>A3</td><td>B3</td><td>C3</td><td>D3</td>
-                    	      <td>E3</td><td>F3</td><td>G3</td><td>H3</td>
-                </tr>
-                <tr align="center">
-                    <th>4</th><td>A4</td><td>B4</td><td>C4</td><td>D4</td>
-                              <td>E4</td><td>F4</td><td>G4</td><td>H4</td>
-                </tr>
-                <tr align="center">
-                    <th>5</th><td>A5</td><td>B5</td><td>C5</td><td>D5</td>
-                              <td>E5</td><td>F5</td><td>G5</td><td>H5</td>
-                </tr>
-                <tr align="center">
-                    <th>6</th><td>A6</td><td>B6</td><td>C6</td><td>D6</td>
-                              <td>E6</td><td>F6</td><td>G6</td><td>H6</td>
-                </tr>
-                <tr align="center">
-                    <th>7</th><td>A7</td><td>B7</td><td>C7</td><td>D7</td>
-                              <td>E7</td><td>F7</td><td>G7</td><td>H7</td>
-                </tr>
-                <tr align="center">
-                    <th>8</th><td>A8</td><td>B8</td><td>C8</td><td>D8</td>
-                              <td>E8</td><td>F8</td><td>G8</td><td>H8</td>
-                </tr>
-                <tr align="center">
-                    <th>9</th><td>A9</td><td>B9</td><td>C9</td><td>D9</td>
-                              <td>E9</td><td>F9</td><td>G9</td><td>H9</td>
-                </tr>
-            </table> <!-- Page location table ends here -->
-			<br>
-			</div>
-		</div> <!-- Close Col 2-->
-	</div><br><br> <!-- Close Row 1-->
+				<div class="col-lg-6"><!-- Col 2 -->
+					<!-- Part location table begins here -->
+					<br>
+					<div class="card"">
+						<center><h4>แผนผังห้อง</h4></center>
+						<center><img src="teacher_table.png" width="15%"height="10%"></center>
+						<table border="1" align="center" width="80%"height="50%" bgcolor="pink">
+							<tr align="center">
+								<th></th><th>A</th><th>B</th><th>C</th><th>D</th>
+										 <th>E</th><th>F</th><th>G</th><th>H</th>
+							</tr>
+							<tr align="center">
+								<th>1</th><td>A1</td><td>B1</td><td>C1</td><td>D1</td>
+										  <td>E1</td><td>F1</td><td>G1</td><td>H1</td>
+							</tr>
+							<tr align="center">
+								<th>2</th><td>A2</td><td>B2</td><td>C2</td><td>D2</td>
+										  <td>E2</td><td>F2</td><td>G2</td><td>H2</td>
+							</tr>
+							<tr align="center">
+								<th>3</th><td>A3</td><td>B3</td><td>C3</td><td>D3</td>
+										  <td>E3</td><td>F3</td><td>G3</td><td>H3</td>
+							</tr>
+							<tr align="center">
+								<th>4</th><td>A4</td><td>B4</td><td>C4</td><td>D4</td>
+										  <td>E4</td><td>F4</td><td>G4</td><td>H4</td>
+							</tr>
+							<tr align="center">
+								<th>5</th><td>A5</td><td>B5</td><td>C5</td><td>D5</td>
+										  <td>E5</td><td>F5</td><td>G5</td><td>H5</td>
+							</tr>
+							<tr align="center">
+								<th>6</th><td>A6</td><td>B6</td><td>C6</td><td>D6</td>
+										  <td>E6</td><td>F6</td><td>G6</td><td>H6</td>
+							</tr>
+							<tr align="center">
+								<th>7</th><td>A7</td><td>B7</td><td>C7</td><td>D7</td>
+										  <td>E7</td><td>F7</td><td>G7</td><td>H7</td>
+							</tr>
+							<tr align="center">
+								<th>8</th><td>A8</td><td>B8</td><td>C8</td><td>D8</td>
+										  <td>E8</td><td>F8</td><td>G8</td><td>H8</td>
+							</tr>
+							<tr align="center">
+								<th>9</th><td>A9</td><td>B9</td><td>C9</td><td>D9</td>
+										  <td>E9</td><td>F9</td><td>G9</td><td>H9</td>
+							</tr>
+						</table>
+						<br>
+					</div>
+					<!-- Part location table ends here -->
+				</div> <!-- Close Col 2-->
+			</div><br><br> <!-- Close Row 1-->
 
-	<div class="row"> <!-- Row 2 -->
-		<!-- Page show all upload location begins here -->
-		<div class="col-lg">
-			<div class="card">
-			<br>
-			<center><h4>รายชื่อคนที่มา</h4></center>
-			<div class="table-responsive-lg">
-				<table class="table" border="2"> 
-					<thead class="thead-light"> 
-						<tr align="center"> 
-							<th>Student ID</th> 
-							<th>Seat</th> 
-							<th>Contact</th> 
-							<th>Time</th> 
-						</tr> 
-					</thead> 
-					<tbody id="dataRow" class="table-light"> 
-					</tbody>
-				</table> <!-- Page show all upload location ends here -->
-			</div>
-			</div>
-			</div>
-		</div> <!-- Close Col 2 -->
-	</div> <!-- Close Row 2-->
-</div> <!-- Close container -->
-<!-- Page content ends here -->
+			<div class="row"> <!-- Row 2 -->
+				<!-- Part show all upload location begins here -->
+				<div class="col-lg">
+					<div class="card">
+					<br>
+					<center><h4>รายชื่อคนที่มา</h4></center>
+					<div class="table-responsive-lg">
+						<table class="table" border="2"> 
+							<thead class="thead-light"> 
+								<tr align="center"> 
+									<th>Student ID</th> 
+									<th>Seat</th> 
+									<th>Contact</th> 
+									<th>Time</th> 
+								</tr> 
+							</thead> 
+							<tbody id="dataRow" class="table-light"> 
+							</tbody>
+						</table>
+					</div>
+					</div>
+				</div> <!-- Close Col 2 -->
+				<!-- Part show all upload location ends here -->
+			</div> <!-- Close Row 2-->
+		</div> <!-- Close container -->
+		<!-- Part content ends here -->
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase.js"></script>
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.5.1/firebase-analytics.js"></script>
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+			 https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/7.5.1/firebase-analytics.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCCvDVu7H1ygq4dTC379slHtzUDHy0uETw",
-    authDomain: "whocomepair.firebaseapp.com",
-    databaseURL: "https://whocomepair.firebaseio.com",
-    projectId: "whocomepair",
-    storageBucket: "whocomepair.appspot.com",
-    messagingSenderId: "67909590691",
-    appId: "1:67909590691:web:84cb556fea1c2bd454e916",
-    measurementId: "G-W8PY6ZPSEC"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+		<script>
+		  // Your web app's Firebase configuration
+		  var firebaseConfig = {
+			apiKey: "AIzaSyCCvDVu7H1ygq4dTC379slHtzUDHy0uETw",
+			authDomain: "whocomepair.firebaseapp.com",
+			databaseURL: "https://whocomepair.firebaseio.com",
+			projectId: "whocomepair",
+			storageBucket: "whocomepair.appspot.com",
+			messagingSenderId: "67909590691",
+			appId: "1:67909590691:web:84cb556fea1c2bd454e916",
+			measurementId: "G-W8PY6ZPSEC"
+		  };
+		  // Initialize Firebase
+		  firebase.initializeApp(firebaseConfig);
+		  firebase.analytics();
 
-<!-- push data to firebase begins here -->
-let myFirebase = firebase.database();
-let dataRef = myFirebase.ref('/guestbook');
+		<!-- push data to firebase begins here -->
+		let myFirebase = firebase.database();
+		let dataRef = myFirebase.ref('/guestbook');
 
-document.getElementById("commentBtn").onclick = function() {
+		document.getElementById("commentBtn").onclick = function() {
 
-    let lstudentid = document.getElementById('idName').value;
-    let llocation = document.getElementById('idLocation').value;
-	let lcontact = document.getElementById('idContact').value; 
-    var d = new Date(),
-    h = (d.getHours()<10?'0':'') + d.getHours(),
-    m = (d.getMinutes()<10?'0':'') + d.getMinutes();
-	ltime = h + ':' + m;
+			let lstudentid = document.getElementById('idName').value;
+			let llocation = document.getElementById('idLocation').value;
+			let lcontact = document.getElementById('idContact').value; 
+			var d = new Date(),
+			h = (d.getHours()<10?'0':'') + d.getHours(),
+			m = (d.getMinutes()<10?'0':'') + d.getMinutes();
+			ltime = h + ':' + m;
 
-    dataRef.push({
-        studentid: lstudentid,
-        location: llocation,
-		contact: lcontact,
-        time: ltime
-    });
+			dataRef.push({
+				studentid: lstudentid,
+				location: llocation,
+				contact: lcontact,
+				time: ltime
+			});
 
-}; <!-- push data to firebase ends here -->
+		}; <!-- push data to firebase ends here -->
 
-<!-- pull data from firebase begins here -->
-dataRef.limitToLast(250).on('child_added', function(childSnapshot) {
+		<!-- pull data from firebase begins here -->
+		dataRef.limitToLast(250).on('child_added', function(childSnapshot) {
 
-    let item = childSnapshot.val()
-    document.getElementById('dataRow').innerHTML += "<tr><td>" + item.studentid + "</td><td>" + item.location + "</td><td>"
-	+ item.contact + "</td><td>" + item.time + "</td></tr>"
+			let item = childSnapshot.val()
+			document.getElementById('dataRow').innerHTML += "<tr><td>" + item.studentid + "</td><td>" + item.location + "</td><td>"
+			+ item.contact + "</td><td>" + item.time + "</td></tr>"
 
-}); <!-- pull data from firebase begins here -->
+		}); <!-- pull data from firebase begins here -->
 
-</script>
-</body>
+		</script>
+	</body>
 </html>
